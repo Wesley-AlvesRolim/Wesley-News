@@ -5,7 +5,7 @@ type LayoutProps = { children: ReactElement; title: string };
 export function Layout({ children, title }: LayoutProps) {
   return (
     <div className="h-full min-h-screen relative">
-      <header className="w-full h-72 bg-black rounded-b-[6.25rem] pt-40 flex justify-center items-center text-center md:px-32">
+      <header className="w-full h-72 bg-black rounded-b-[6.25rem] pt-11 flex justify-center items-center text-center md:px-32">
         <img
           className="w-44 h-20 absolute left-[10%] top-10 cursor-pointer"
           width={256}
