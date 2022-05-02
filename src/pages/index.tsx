@@ -50,8 +50,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="min-h-[21.5rem] h-4/5 mt-[-42px] m-auto p-6 rounded-tl-[1.875rem]  bg-white flex flex-wrap-reverse justify-center md:p-14">
-          <div className="w-[35.75rem] max-h-80">
+        <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap">
+          <div className="w-[35.75rem] lg:max-h-80">
             <h2 className="mb-[0.625rem] font-bold text-[#232323] text-2xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h2>
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-[80%] m-auto flex flex-wrap justify-center gap-16">
+        <div className="max-w-[80%] m-auto mt-4 flex flex-wrap justify-center gap-16">
           {posts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
