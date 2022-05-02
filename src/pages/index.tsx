@@ -1,27 +1,24 @@
 import Head from "next/head";
+import { Layout } from "../components/Layout";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Wesley News</title>
+        <title>Wesley News | Home</title>
         <meta
           name="description"
           content="Todas as notícias do mundo estarão presentes aqui."
         />
       </Head>
 
-      <header>
-        <h1>header</h1>
-      </header>
-
       <main>
         <h1>main</h1>
       </main>
-
-      <footer>
-        <h1>footer</h1>
-      </footer>
     </div>
   );
 }
+
+Home.getLayout = (page) => {
+  return <Layout>{page}</Layout>;
+};
