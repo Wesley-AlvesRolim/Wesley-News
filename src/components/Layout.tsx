@@ -18,8 +18,14 @@ export function Layout({ children, title }: LayoutProps) {
 
       {children}
 
+      <div className="pb-40"></div>
       <footer className="w-full h-28 absolute bottom-0 bg-black flex items-center justify-center">
-        <small>&copy; Copyright 2022, Wesley News</small>
+        <div className="w-4/5 h-4/5 flex items-center flex-wrap">
+          <hr className="w-full border-t border-[#ff2147]" />
+          <small className="text-white">
+            &copy; Copyright 2022, Wesley News
+          </small>
+        </div>
       </footer>
     </div>
   );
