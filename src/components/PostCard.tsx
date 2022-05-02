@@ -1,6 +1,15 @@
+import { useRouter } from "next/router";
+import { useCallback } from "react";
+
 export function PostCard({ post }) {
+  const router = useRouter();
+
+  const handlePostClick = useCallback(() => {
+    router.push(`/news/${post.id}`);
+  }, []);
+
   return (
-    <div className="w-[28.75rem] text-justify">
+    <div className="w-[28.75rem] text-justify" onClick={handlePostClick}>
       <img
         className="w-full h-60 mb-[1.25rem] rounded-2xl object-cover cursor-pointer"
         src={post.thumbnail}
