@@ -6,7 +6,9 @@ const client = contentful.createClient({
 });
 
 export const getSeveralNews = async () => {
-  const { items } = await client.getEntries();
+  const { items } = await client.getEntries({
+    content_type: "news",
+  });
   return items;
 };
 
