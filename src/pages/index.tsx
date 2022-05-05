@@ -1,44 +1,12 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
 import { HighlightNews } from "../components/HighlightNews";
 import { NewsCard } from "../components/NewsCard";
+import { getSeveralNews } from "../services/contentful";
 
-const posts = [
-  {
-    id: 1,
-    title:
-      "Instagram da Nvidia é invadido e usado para anunciar sorteio falso; saiba como se proteger",
-    description:
-      "Postagens na conta para o Brasil da fabricante de chips prometem placas de vídeo aos seguidores. Empresa alertou no Twitter que conteúdo é fraudulento e informou que tenta resolver a situação.",
-    thumbnail: "/background-default.jpeg",
-  },
-  {
-    id: 2,
-    title:
-      "Instagram da Nvidia é invadido e usado para anunciar sorteio falso; saiba como se proteger",
-    description:
-      "Postagens na conta para o Brasil da fabricante de chips prometem placas de vídeo aos seguidores. Empresa alertou no Twitter que conteúdo é fraudulento e informou que tenta resolver a situação.",
-    thumbnail: "/background-default.jpeg",
-  },
-  {
-    id: 3,
-    title:
-      "Instagram da Nvidia é invadido e usado para anunciar sorteio falso; saiba como se proteger",
-    description:
-      "Postagens na conta para o Brasil da fabricante de chips prometem placas de vídeo aos seguidores. Empresa alertou no Twitter que conteúdo é fraudulento e informou que tenta resolver a situação.",
-    thumbnail: "/background-default.jpeg",
-  },
-  {
-    id: 4,
-    title:
-      "Instagram da Nvidia é invadido e usado para anunciar sorteio falso; saiba como se proteger",
-    description:
-      "Postagens na conta para o Brasil da fabricante de chips prometem placas de vídeo aos seguidores. Empresa alertou no Twitter que conteúdo é fraudulento e informou que tenta resolver a situação.",
-    thumbnail: "/background-default.jpeg",
-  },
-];
-
-export default function Home() {
+export default function Home({ severalNews: severalNewsByProps }) {
+  const [highlightNews, ...severalNews] = severalNewsByProps;
   return (
     <>
       <Head>
@@ -65,4 +33,15 @@ export default function Home() {
 
 Home.getLayout = (page) => {
   return <Layout title="News">{page}</Layout>;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const severalNews = await getSeveralNews();
+
+  return {
+    props: {
+      severalNews,
+    },
+    revalidate: 60,
+  };
 };
