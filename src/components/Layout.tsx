@@ -12,15 +12,17 @@ export function Layout({ children, title }: LayoutProps) {
 
   return (
     <div className="h-full min-h-screen relative">
-      <header className="w-full h-72 bg-black rounded-b-[6.25rem] pt-11 flex justify-center items-center text-center md:px-32">
-        <img
-          onClick={handleLogoClick}
-          className="w-44 h-20 absolute left-[10%] top-10 cursor-pointer"
-          width={256}
-          height={102}
-          src="/Logo.svg"
-          alt="Logomarca do site com o texto: 'Wesley News'"
-        />
+      <header className="w-full min-h-72 pt-4 pb-12 bg-black rounded-b-[6.25rem] flex flex-wrap justify-center text-center md:px-32">
+        <div className="w-full sm:self-start">
+          <img
+            onClick={handleLogoClick}
+            className="w-44 h-20 my-8 cursor-pointer"
+            width={256}
+            height={102}
+            src="/Logo.svg"
+            alt="Logomarca do site com o texto: 'Wesley News'"
+          />
+        </div>
         <h1 className="w-8/12 text-white text-4xl">{title}</h1>
       </header>
 
