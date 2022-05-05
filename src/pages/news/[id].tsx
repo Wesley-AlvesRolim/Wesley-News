@@ -9,6 +9,12 @@ export default function News({ news }) {
       <Head>
         <title>{news.fields.title}</title>
         <meta name="description" content={news.fields.description} />
+        <link
+          rel="canonical"
+          href={"https://wesley-news.vercel.app/news/" + news.sys.id}
+        />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
         <meta property="og:site_name" content="Wesley news" />
         <meta property="og:title" content={news.fields.title} />
         <meta property="og:description" content={news.fields.description} />
@@ -22,7 +28,6 @@ export default function News({ news }) {
         />
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </Head>
       <Layout title={news.fields.title}>
         <div className="w-4/5 min-h-[21.5rem] p-14 m-auto">
