@@ -18,7 +18,7 @@ export default function News({ news }) {
         />
         <meta
           property="og:image"
-          content={news.fields.thumbnail.fields.file.url}
+          content={"https:" + news.fields.thumbnail.fields.file.url}
         />
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
