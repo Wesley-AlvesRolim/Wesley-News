@@ -1,7 +1,22 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { Layout } from "../../components/Layout";
 import { getSingleNews } from "../../services/contentful";
+
+const configsRender = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => (
+      <img
+        src={node.data.target.fields.file.url}
+        height={node.data.target.fields.file.details.height}
+        width={node.data.target.fields.file.details.width}
+        alt={node.data.target.fields.title}
+      />
+    ),
+  },
+};
 
 export default function News({ news }) {
   return (
@@ -30,13 +45,17 @@ export default function News({ news }) {
         <meta property="og:type" content="website" />
       </Head>
       <Layout title={news.fields.title}>
-        <div className="w-4/5 min-h-[21.5rem] p-14 m-auto">
-          <div className="w-full">
+        <div className="w-4/5 min-h-[21.5rem] py-4 m-auto sm:p-14">
+          <div className="w-full max-w-4xl m-auto">
             <img
-              className="w-full h-[26rem] rounded-[1.875rem] object-cover"
+              className="w-full rounded-[1.875rem] object-cover"
               src={news.fields.thumbnail.fields.file.url}
               alt={`Foto de capa da notícia com o título: ${news.fields.title}`}
             />
+          </div>
+
+          <div className="mt-5 whitespace-pre-wrap break-words news-content">
+            {documentToReactComponents(news.fields.content, configsRender)}
           </div>
         </div>
       </Layout>

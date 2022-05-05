@@ -14,3 +14,37 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.news-content h1 {
+  @apply text-6xl my-8;
+}
+
+.news-content h2 {
+  @apply text-5xl my-8;
+}
+
+.news-content h3 {
+  @apply text-4xl my-6;
+}
+
+.news-content h4 {
+  @apply text-3xl my-6;
+}
+
+.news-content h5 {
+  @apply text-2xl my-4;
+}
+
+.news-content h6 {
+  @apply text-xl my-4;
+}
+
+.news-content a {
+  @apply text-[#ff2147] underline underline-offset-2 hover:brightness-75 transition-all;
+}
+
+.news-content p {
+  font-family: "Poppins", "Radio Canada", "Roboto", Helvetica Neue, Arial,
+    Noto Sans, sans-serif;
+  @apply text-xl my-4;
+}
