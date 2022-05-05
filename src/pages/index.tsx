@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
 import { HighlightNews } from "../components/HighlightNews";
@@ -35,13 +35,12 @@ Home.getLayout = (page) => {
   return <Layout title="News">{page}</Layout>;
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const severalNews = await getSeveralNews();
 
   return {
     props: {
       severalNews,
     },
-    revalidate: 60,
   };
 };
