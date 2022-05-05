@@ -12,7 +12,10 @@ export default function News({ news }) {
         <meta property="og:site_name" content="Wesley news" />
         <meta property="og:title" content={news.fields.title} />
         <meta property="og:description" content={news.fields.description} />
-        <meta property="og:url" content="https://wesley-news.vercel.app" />
+        <meta
+          property="og:url"
+          content={"https://wesley-news.vercel.app/news/" + news.sys.id}
+        />
         <meta
           property="og:image"
           content={news.fields.thumbnail.fields.file.url}
