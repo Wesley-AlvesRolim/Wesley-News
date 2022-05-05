@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Layout } from "../components/Layout";
+import { HighlightNews } from "../components/HighlightNews";
 import { PostCard } from "../components/PostCard";
 
 const posts = [
@@ -50,39 +51,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap">
-          <div className="w-[35.75rem] lg:max-h-80">
-            <h2 className="mb-[0.625rem] font-bold text-[#232323] text-2xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h2>
-            <p className="text-lg">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
-              animi quod iure velit corrupti non, quisquam mollitia cum!
-              Sapiente nesciunt at quae natus aliquid. Aliquid dolorem quo
-              quaerat necessitatibus. Odio.
-            </p>
-
-            <div className="mt-[0.625rem] flex items-center">
-              <img
-                src="/user-profile.png"
-                alt="Photo of jornalist"
-                className=" h-12 w-12 mr-4 rounded-full object-cover"
-              />
-              <div className="text-gray-700 flex flex-col">
-                <h3>Um jornalista</h3>
-                <time>jul 5, 2018</time>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-[35.625rem] max-h-80">
-            <img
-              className="w-full h-full rounded-[1.25rem] object-cover"
-              src="/background-default.jpeg"
-              alt="Capa da notícia"
-            />
-          </div>
-        </div>
+        <HighlightNews news={highlightNews} />
 
         <div className="max-w-[80%] m-auto mt-4 flex flex-wrap justify-center gap-16">
           {posts.map((post) => (
