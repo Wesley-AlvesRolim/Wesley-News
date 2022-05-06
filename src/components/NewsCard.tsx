@@ -3,7 +3,7 @@ import Link from "next/link";
 export function NewsCard({ news }) {
   return (
     <div className="w-[28.75rem] text-justify  cursor-pointer">
-      <Link href={`/news/${news.sys.id}`} passHref prefetch>
+      <Link href={`/news/${news.sys.id}`} passHref>
         <a>
           <div>
             <img
@@ -19,7 +19,11 @@ export function NewsCard({ news }) {
 
             <div className="mt-[0.625rem] flex items-center">
               <img
-                src="/user-profile.png"
+                src={
+                  news.fields.author.fields.image?.fields.file.url
+                    ? "https:" + news.fields.author.fields.image.fields.file.url
+                    : "/user-profile.png"
+                }
                 alt="Photo of jornalist"
                 className=" h-12 w-12 mr-4 rounded-full object-cover"
               />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 export function HighlightNews({ news }) {
   return (
-    <Link href={`/news/${news.sys.id}`} passHref prefetch>
+    <Link href={`/news/${news.sys.id}`} passHref>
       <a>
         <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap hover:cursor-pointer">
           <div className="w-[35.75rem] lg:max-h-80">
@@ -12,7 +12,11 @@ export function HighlightNews({ news }) {
 
             <div className="mt-[0.625rem] flex items-center">
               <img
-                src="/user-profile.png"
+                src={
+                  news.fields.author.fields.image.fields.file.url
+                    ? "https:" + news.fields.author.fields.image.fields.file.url
+                    : "/user-profile.png"
+                }
                 alt="Photo of jornalist"
                 className=" h-12 w-12 mr-4 rounded-full object-cover"
               />
