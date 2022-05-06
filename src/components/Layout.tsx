@@ -1,27 +1,24 @@
-import { useRouter } from "next/router";
-import { ReactElement, useCallback } from "react";
+import Link from "next/link";
+import { ReactElement } from "react";
 
 type LayoutProps = { children: ReactElement; title: string };
 
 export function Layout({ children, title }: LayoutProps) {
-  const router = useRouter();
-
-  const handleLogoClick = useCallback(() => {
-    router.push("/");
-  }, []);
-
   return (
     <div className="h-full min-h-screen relative">
       <header className="w-full min-h-72 pt-4 pb-12 bg-black rounded-b-[6.25rem] flex flex-wrap justify-center text-center md:px-32">
         <div className="w-full sm:self-start">
-          <img
-            onClick={handleLogoClick}
-            className="w-44 h-20 my-8 cursor-pointer"
-            width={256}
-            height={102}
-            src="/Logo.svg"
-            alt="Logomarca do site com o texto: 'Wesley News'"
-          />
+          <Link href="/" passHref>
+            <a>
+              <img
+                className="w-44 h-20 my-8 cursor-pointer"
+                width={256}
+                height={102}
+                src="/Logo.svg"
+                alt="Logomarca do site com o texto: 'Wesley News' e que serve para voltar para a paǵina inicial"
+              />
+            </a>
+          </Link>
         </div>
         <h1 className="w-8/12 text-white text-4xl">{title}</h1>
       </header>
