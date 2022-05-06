@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export function HighlightNews({ news }) {
   return (
     <Link href={`/news/${news.sys.id}`} passHref prefetch>
