@@ -40,7 +40,7 @@ a {
 }
 
 .news-content a {
-  @apply text-[#a8001c] underline underline-offset-2 hover:brightness-75 transition-all;
+  @apply text-[#a8001c] underline underline-offset-2 hover:brightness-150 transition-all;
 }
 
 .news-content p {
