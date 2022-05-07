@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactElement } from "react";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 type LayoutProps = { children: ReactElement; title: string };
 
@@ -7,7 +8,7 @@ export function Layout({ children, title }: LayoutProps) {
   return (
     <div className="h-full min-h-screen relative">
       <header className="w-full min-h-72 pt-4 px-4 pb-12 bg-black rounded-b-[6.25rem] flex flex-wrap justify-center text-center md:px-32">
-        <div className="w-full sm:self-start">
+        <div className="w-full flex items-center justify-between sm:self-start">
           <Link href="/" passHref>
             <a>
               <img
@@ -19,6 +20,7 @@ export function Layout({ children, title }: LayoutProps) {
               />
             </a>
           </Link>
+          <ThemeSwitcher />
         </div>
         <h1 className="w-11/12 text-white text-4xl sm:w-8/12">{title}</h1>
       </header>

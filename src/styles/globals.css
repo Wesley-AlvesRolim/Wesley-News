@@ -43,6 +43,14 @@ a {
   @apply text-[#a8001c] underline underline-offset-2 hover:brightness-150 transition-all;
 }
 
+.dark .news-content a {
+  @apply brightness-150;
+}
+
+.dark .news-content a:hover {
+  @apply brightness-125;
+}
+
 .news-content p {
   font-family: "Poppins", "Radio Canada", "Roboto", Helvetica Neue, Arial,
     Noto Sans, sans-serif;

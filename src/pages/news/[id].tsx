@@ -54,14 +54,14 @@ export default function News({ news }) {
             />
           </div>
 
-          <article>
+          <article className="text-black dark:text-white">
             <section className="mt-5 whitespace-pre-wrap break-words news-content">
               {documentToReactComponents(news.fields.content, configsRender)}
             </section>
 
-            <footer className="mt-8 text-gray-700 flex hover:text-gray-800">
+            <footer className="mt-8 text-gray-700 dark:text-gray-400 flex hover:text-gray-800 dark:hover:text-gray-300 transition-colors">
               <img
-                className="w-10 h-10 rounded-full"
+                className="w-10 h-10 mr-4 rounded-full"
                 src={
                   news.fields.author.fields.image?.fields.file.url
                     ? "https:" + news.fields.author.fields.image.fields.file.url

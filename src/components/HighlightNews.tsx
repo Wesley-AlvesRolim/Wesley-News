@@ -3,9 +3,9 @@ export function HighlightNews({ news }) {
   return (
     <Link href={`/news/${news.sys.id}`} passHref>
       <a>
-        <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap hover:cursor-pointer">
+        <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white dark:bg-transparent flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap hover:cursor-pointer">
           <div className="w-[35.75rem] lg:max-h-80">
-            <h2 className="mb-[0.625rem] font-bold text-[#232323] text-2xl">
+            <h2 className="mb-[0.625rem] font-bold text-[#232323] dark:text-white text-2xl">
               {news.fields.title}
             </h2>
             <p className="text-lg">{news.fields.description ?? ""}</p>
@@ -20,7 +20,7 @@ export function HighlightNews({ news }) {
                 alt="Photo of jornalist"
                 className=" h-12 w-12 mr-4 rounded-full object-cover"
               />
-              <div className="text-gray-700 flex flex-col hover:text-gray-800">
+              <div className="text-gray-700 dark:text-gray-400 flex flex-col hover:text-gray-800 dark:hover:text-gray-300 transition-colors">
                 <h3> {news.fields.author.fields.name}</h3>
                 <time>
                   {new Intl.DateTimeFormat("pt-BR", {

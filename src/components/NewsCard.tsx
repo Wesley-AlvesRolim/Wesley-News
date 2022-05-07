@@ -27,7 +27,7 @@ export function NewsCard({ news }) {
                 alt="Photo of jornalist"
                 className=" h-12 w-12 mr-4 rounded-full object-cover"
               />
-              <div className="text-gray-700 flex flex-col hover:text-gray-800">
+              <div className="text-gray-700 dark:text-gray-400 flex flex-col hover:text-gray-800 dark:hover:text-gray-300 transition-colors">
                 <h3> {news.fields.author.fields.name}</h3>
                 <time>
                   {new Intl.DateTimeFormat("pt-BR", {

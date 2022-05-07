@@ -18,7 +18,7 @@ export default function Home({ severalNews: severalNewsByProps }) {
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </Head>
 
-      <main>
+      <main className="text-black dark:text-gray-50">
         <HighlightNews news={highlightNews} />
 
         <div className="max-w-[80%] m-auto mt-4 flex flex-wrap justify-center gap-16">
