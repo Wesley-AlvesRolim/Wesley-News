@@ -32,7 +32,7 @@ export default function Home({ severalNews: severalNewsByProps }) {
 }
 
 Home.getLayout = (page) => {
-  return <Layout title="News">{page}</Layout>;
+  return <Layout title="Últimas notícias">{page}</Layout>;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
