@@ -45,7 +45,7 @@ export default function News({ news }) {
         <meta property="og:type" content="website" />
       </Head>
       <Layout title={news.fields.title}>
-        <div className="w-4/5 min-h-[21.5rem] py-4 m-auto sm:p-14">
+        <main className="w-4/5 min-h-[21.5rem] py-4 m-auto sm:p-14">
           <div className="w-full max-w-4xl m-auto">
             <img
               className="w-full rounded-[1.875rem] object-cover"
@@ -79,7 +79,7 @@ export default function News({ news }) {
               </div>
             </footer>
           </article>
-        </div>
+        </main>
       </Layout>
     </>
   );
