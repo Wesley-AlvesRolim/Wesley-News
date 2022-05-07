@@ -28,7 +28,7 @@ export function Layout({ children, title }: LayoutProps) {
       <div className="pb-40"></div>
       <footer className="w-full h-28 absolute bottom-0 bg-black text-white flex items-center justify-center">
         <div className="w-4/5 h-4/5 flex justify-between items-center flex-wrap">
-          <hr className="w-full border-t border-[#ff2147]" />
+          <hr className="w-full border-t border-[#a8001c]" />
           <ul className="m-auto flex flex-wrap gap-8 sm:order-2">
             <li title="Meu Github">
               <a
