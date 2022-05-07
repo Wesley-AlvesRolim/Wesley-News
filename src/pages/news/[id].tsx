@@ -54,9 +54,31 @@ export default function News({ news }) {
             />
           </div>
 
-          <div className="mt-5 whitespace-pre-wrap break-words news-content">
-            {documentToReactComponents(news.fields.content, configsRender)}
-          </div>
+          <article>
+            <section className="mt-5 whitespace-pre-wrap break-words news-content">
+              {documentToReactComponents(news.fields.content, configsRender)}
+            </section>
+
+            <footer className="mt-8 text-gray-700 flex hover:text-gray-800">
+              <img
+                className="w-10 h-10 rounded-full"
+                src={
+                  news.fields.author.fields.image?.fields.file.url
+                    ? "https:" + news.fields.author.fields.image.fields.file.url
+                    : "/user-profile.png"
+                }
+                alt={`Foto do autor dessa notícia. Seu nome é: ${news.fields.author.fields.name}`}
+              />
+              <div className="flex flex-col">
+                <h3> {news.fields.author.fields.name}</h3>
+                <time>
+                  {new Intl.DateTimeFormat("pt-BR", {
+                    dateStyle: "full",
+                  }).format(new Date(news.sys.createdAt))}
+                </time>
+              </div>
+            </footer>
+          </article>
         </div>
       </Layout>
     </>
