@@ -32,7 +32,7 @@ export default function Document() {
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
       </Head>
-      <body className="bg-white dark:bg-gray-900">
+      <body className="bg-white dark:bg-gray-900 transition-colors">
         <Main />
         <NextScript />
       </body>
