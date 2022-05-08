@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 
 type themesAvailable = "light" | "dark";
 
+const setThemeInHtml = (add: themesAvailable, remove: themesAvailable) => {
+  document.querySelector("html").classList.add(add);
+  document.querySelector("html").classList.remove(remove);
+};
+
 export function ThemeSwitcher() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
@@ -12,11 +17,6 @@ export function ThemeSwitcher() {
       setIsDarkTheme(true);
     }
   });
-
-  const setThemeInHtml = (add: themesAvailable, remove: themesAvailable) => {
-    document.querySelector("html").classList.add(add);
-    document.querySelector("html").classList.remove(remove);
-  };
 
   function handleClickToSetATheme(theme: themesAvailable) {
     setThemeInHtml(theme, theme === "dark" ? "light" : "dark");
@@ -29,10 +29,10 @@ export function ThemeSwitcher() {
       type="button"
       title="Botão responsável por trocar o tema da página"
       className="w-8 h-8 rounded-full"
+      onClick={() => handleClickToSetATheme(isDarkTheme ? "light" : "dark")}
     >
       {isDarkTheme ? (
         <svg
-          onClick={() => handleClickToSetATheme("light")}
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           id="Capa_1"
@@ -70,7 +70,6 @@ export function ThemeSwitcher() {
         </svg>
       ) : (
         <svg
-          onClick={() => handleClickToSetATheme("dark")}
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           viewBox="0 0 512 512"
