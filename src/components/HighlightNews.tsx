@@ -3,7 +3,7 @@ export function HighlightNews({ news }) {
   return (
     <Link href={`/news/${news.sys.id}`} passHref>
       <a>
-        <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white dark:bg-transparent flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap hover:cursor-pointer">
+        <div className="w-4/5 m-auto mt-[-42px] p-6 rounded-tl-[1.875rem]  bg-white dark:bg-gray-900 flex flex-wrap-reverse justify-center md:p-14 xl:flex-nowrap hover:cursor-pointer">
           <div className="w-[35.75rem] lg:max-h-80">
             <h2 className="mb-[0.625rem] font-bold text-[#232323] dark:text-white text-2xl">
               {news.fields.title}
@@ -13,7 +13,7 @@ export function HighlightNews({ news }) {
             <div className="mt-[0.625rem] flex items-center">
               <img
                 src={
-                  news.fields.author.fields.image.fields.file.url
+                  news.fields.author.fields.image?.fields.file.url
                     ? "https:" + news.fields.author.fields.image.fields.file.url
                     : "/user-profile.png"
                 }
