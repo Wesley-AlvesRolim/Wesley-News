@@ -33,7 +33,7 @@
 <p>In this application you can read news about the tecnology world.</p>
 
 <br>
-<img src="./screenshot.png" alt="Screenshot of project">
+<img src="./project-screen-recording.gif" alt="Screenshot of project">
 <br>
 <br>
 
