@@ -57,6 +57,10 @@ a {
   @apply text-xl my-4;
 }
 
+.animate-bounce-circle {
+  animation: bounce-circle 2s infinite linear;
+}
+
 .animate-blur {
   filter: blur(0px);
   animation: blur-text 1s infinite linear alternate;
@@ -68,5 +72,17 @@ a {
   }
   100% {
     filter: blur(4px);
+  }
+}
+
+@keyframes bounce-circle {
+  0% {
+  }
+
+  50% {
+    background-color: #fff;
+  }
+
+  100% {
   }
 }

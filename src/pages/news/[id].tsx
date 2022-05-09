@@ -2,7 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import { Layout } from "../../components/Layout";
+import { Layout } from "../../components/Layout/";
 import { getSingleNews } from "../../services/contentful";
 
 const configsRender = {
