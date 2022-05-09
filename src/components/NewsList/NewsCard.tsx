@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function NewsCard({ news }) {
   return (
-    <div className="w-[28.75rem] text-justify  cursor-pointer">
+    <div className="w-[28.75rem] text-justify cursor-pointer">
       <Link href={`/news/${news.sys.id}`} passHref>
         <a>
           <div>

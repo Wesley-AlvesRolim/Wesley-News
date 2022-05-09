@@ -90,7 +90,7 @@ export default function News({ currentNews, latestNews }) {
             </article>
           </main>
           {latestNews.length > 0 && (
-            <div className="flex flex-col">
+            <div className="text-black dark:text-gray-50 flex flex-col">
               <h2 className="mt-12 font-bold text-3xl self-center">
                 Veja também
               </h2>
