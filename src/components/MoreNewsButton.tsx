@@ -27,15 +27,15 @@ export function MoreNewsButton({
         {isLoading ? (
           <div className="flex items-center justify-center gap-4">
             <span
-              className="w-6 h-6 rounded-full bg-gray-500 animate-bounce-circle"
+              className="w-6 h-6 rounded-full bg-gray-50 animate-bounce-circle"
               style={{ animationDelay: "0.5s" }}
             ></span>
             <span
-              className="w-6 h-6 rounded-full bg-gray-500 animate-bounce-circle"
+              className="w-6 h-6 rounded-full bg-gray-50 animate-bounce-circle"
               style={{ animationDelay: "0.75s" }}
             ></span>
             <span
-              className="w-6 h-6 rounded-full bg-gray-500 animate-bounce-circle"
+              className="w-6 h-6 rounded-full bg-gray-50 animate-bounce-circle"
               style={{ animationDelay: "1s" }}
             ></span>
           </div>

@@ -80,7 +80,7 @@ a {
   }
 
   50% {
-    background-color: #fff;
+    @apply bg-gray-400;
   }
 
   100% {
