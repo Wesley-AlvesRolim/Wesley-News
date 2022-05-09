@@ -27,8 +27,9 @@ export default function Document() {
         <meta property="og:url" content="https://wesley-news.vercel.app" />
         <meta
           property="og:image"
-          content="https://wesley-news.vercel.app/Logo.svg"
+          content="https://wesley-news.vercel.app/Logo.png"
         />
+        <meta property="og:image:width" content="1200" />
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
       </Head>

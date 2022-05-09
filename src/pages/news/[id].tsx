@@ -45,6 +45,13 @@ export default function News({ currentNews, latestNews }) {
           property="og:image"
           content={"https:" + currentNews.fields.thumbnail.fields.file.url}
         />
+        <meta
+          property="og:image:width"
+          content={
+            currentNews.fields.thumbnail.fields?.file.details.image.width ||
+            "1200"
+          }
+        />
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
       </Head>
