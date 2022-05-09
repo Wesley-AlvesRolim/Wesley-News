@@ -56,3 +56,17 @@ a {
     Noto Sans, sans-serif;
   @apply text-xl my-4;
 }
+
+.animate-blur {
+  filter: blur(0px);
+  animation: blur-text 1s infinite linear alternate;
+}
+
+@keyframes blur-text {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(4px);
+  }
+}
