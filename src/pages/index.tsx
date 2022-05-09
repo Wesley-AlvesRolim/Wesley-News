@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import { HighlightNews } from "../components/HighlightNews";
 import { NewsCard } from "../components/NewsCard";
-import { getSeveralNews } from "../services/contentful";
+import { Loading } from "../components/Loading";
 
 export default function Home() {
   const [newsTotal, setNewsTotal] = useState(0);
@@ -58,7 +58,7 @@ export default function Home() {
             )}
           </>
         ) : (
-          "CARREGANDO"
+          <Loading />
         )}
       </main>
     </>
@@ -67,14 +67,4 @@ export default function Home() {
 
 Home.getLayout = (page) => {
   return <Layout title="Últimas notícias">{page}</Layout>;
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const severalNews = await getSeveralNews();
-
-  return {
-    props: {
-      severalNews,
-    },
-  };
 };
