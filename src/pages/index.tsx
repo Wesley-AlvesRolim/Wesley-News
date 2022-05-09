@@ -2,13 +2,13 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import { HighlightNews } from "../components/HighlightNews";
-import { NewsCard } from "../components/NewsCard";
 import { Loading } from "../components/Loading";
+import { NewsList } from "../components/NewsList";
 
 export default function Home() {
   const [newsTotal, setNewsTotal] = useState(0);
   const [newsGroup, setNewsGroup] = useState([]);
-  const [highlightNews, ...severalNews] = newsGroup;
+  const [highlightNews, ...restOfNews] = newsGroup;
 
   async function getNews(limit: number) {
     const { origin } = window.location;
@@ -36,11 +36,7 @@ export default function Home() {
           <>
             <HighlightNews news={highlightNews} />
 
-            <div className="max-w-[80%] m-auto mt-4 flex flex-wrap justify-center gap-16">
-              {severalNews.map((news) => (
-                <NewsCard key={news.sys.id} news={news} />
-              ))}
-            </div>
+            <NewsList newsGroup={restOfNews} />
 
             {newsGroup.length >= newsTotal ? (
               ""
