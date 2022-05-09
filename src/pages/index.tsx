@@ -41,14 +41,14 @@ export default function Home() {
             {newsGroup.length >= newsTotal ? (
               ""
             ) : (
-              <div className="mt-8">
+              <div className="mt-12">
                 <button
                   title="Botão responsável por carregar mais notícias"
                   type="button"
-                  className="block w-full max-w-[10rem] m-auto p-2 bg-[#a8001c] text-white font-bold hover:brightness-125 transition-colors"
+                  className="block w-full max-w-[15rem] m-auto p-2 bg-[#a8001c] text-white font-bold hover:brightness-125 transition-colors"
                   onClick={() => getNews(newsGroup.length + 4)}
                 >
-                  Mais notícias
+                  Mostrar mais notícias
                 </button>
               </div>
             )}
