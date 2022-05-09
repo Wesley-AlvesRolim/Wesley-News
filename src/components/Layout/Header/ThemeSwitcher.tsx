@@ -28,9 +28,10 @@ export function ThemeSwitcher() {
     <button
       type="button"
       title="Botão responsável por trocar o tema da página"
-      className="w-8 h-8 rounded-full"
+      className="w-8 h-8 rounded-full text-[0px]"
       onClick={() => handleClickToSetATheme(isDarkTheme ? "light" : "dark")}
     >
+      Botão responsável por trocar o tema da página
       {isDarkTheme ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
