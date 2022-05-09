@@ -5,11 +5,12 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_DELIVERY_API_KEY,
 });
 
-export const getSeveralNews = async () => {
-  const { items } = await client.getEntries({
+export const getSeveralNews = async (limit: number) => {
+  const { items, total } = await client.getEntries({
     content_type: "news",
+    limit,
   });
-  return items;
+  return { items, total };
 };
 
 export const getSingleNews = async (newsId: string) => {
