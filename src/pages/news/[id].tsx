@@ -54,6 +54,20 @@ export default function News({ currentNews, latestNews }) {
         />
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
+
+        <meta
+          property="twitter:url"
+          content={"https://wesley-news.vercel.app/news/" + currentNews.sys.id}
+        />
+        <meta name="twitter:title" content={currentNews.fields.title} />
+        <meta
+          name="twitter:description"
+          content={currentNews.fields.description}
+        />
+        <meta
+          name="twitter:image"
+          content={"https:" + currentNews.fields.thumbnail.fields.file.url}
+        />
       </Head>
       <Layout title={currentNews.fields.title}>
         <>

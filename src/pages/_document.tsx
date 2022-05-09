@@ -32,6 +32,22 @@ export default function Document() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:locale" content="pt-br" />
         <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="wesley-news.vercel.app" />
+        <meta
+          property="twitter:url"
+          content="https://wesley-news.vercel.app/"
+        />
+        <meta name="twitter:title" content="Wesley News | Home" />
+        <meta
+          name="twitter:description"
+          content="Todas as notícias do mundo estarão presentes aqui."
+        />
+        <meta
+          name="twitter:image"
+          content="https://wesley-news.vercel.app/Logo.svg"
+        />
       </Head>
       <body className="bg-white dark:bg-gray-900 transition-colors">
         <Main />
